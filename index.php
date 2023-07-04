@@ -221,7 +221,7 @@ if (isset($_POST['submit'])) {
                                 La fuerza es el único lenguaje que el mal entiende. ¡Derrota monstruos para conseguir
                                 muchas recompensas!
                             </div>
-                            <img class="card-img-top rounded-0" src="<?php echo "images/".$row['image'] ?>" alt="Card image cap">
+                            <img class="card-img-top rounded-0" src="<?php echo "images/".$row['text'] ?>" alt="Card image cap">
                             <div class="card-footer bg-white border-0 p-0">
                                 <div class="d-flex justify-content-between align-items-center py-2 mx-3 border-bottom">
                                     <div>
