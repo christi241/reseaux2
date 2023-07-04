@@ -12,24 +12,19 @@ if (isset($_POST['submit'])) {
     $dist="./images".$img;
     move_uploaded_file($_FILES['img']['tmp_name'],$dist);
   
-  $bon="INSERT INTO posts (user_id, media, text, created_at) VALUES ($idu,$media,$img,current_timestamp())";
+  $bon="INSERT INTO `posts` ( `user_id`, `media`, `text`, `created_at`) VALUES ('$idu', '$media', '$img', current_timestamp())";
   $requet4 = mysqli_query($conn,$bon);
      if($requet4){
                 header('location: index.php');
               
     }else {
      echo "pots pas introduit";
-     echo $media;
-     echo $img;
-     
-
      }
         
     
 
 
 }
-
 
 
 ?>
@@ -287,9 +282,7 @@ if (isset($_POST['submit'])) {
                         </div>
 
                         <p class="card-text"><?php echo $row['media']?>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam sunt fugit reprehenderit consectetur exercitationem odio,
-                            quam nobis? Officiis, similique, harum voluptate, facilis voluptas pariatur dolorum tempora sapiente
-                            eius maxime quaerat.
+                            
                             <a href="#" target="_blank">https://mega.nz/#!1J01nRIb!lMZ4B_DR2UWi9SRQK5TTzU1PmQpDtbZkMZjAIbv97hU</a>
                         </p>
                     </div>
