@@ -174,16 +174,17 @@ if (isset($_POST['submit'])) {
 
 
                 <?php
-                $req="SELECT *from posts";                                      
+                $req="SELECT * from posts";                                      
                 $result=mysqli_query($conn,$req);
 
                 $req2= "SELECT * FROM users";
                  $resp1=mysqli_query($conn,$req2);
+                 
     
 	            
                 if (!$_SESSION["utilisateur"]) {
                     
-                while ($row= mysqli_fetch_assoc($result) and $row1= mysqli_fetch_assoc($resp1)) {
+                while ($row= mysqli_fetch_assoc($result) or $row3= mysqli_fetch_assoc($resp1)) {
                 ?>
                 <!-- ITEM -->
                 <form  method="post" action="#" enctype="multipart/form-data">
@@ -238,7 +239,7 @@ if (isset($_POST['submit'])) {
                         </form>
                         <?php } }else {
                             
-                            while ($row= mysqli_fetch_assoc($result) and $row3= mysqli_fetch_assoc($resp1)) {  
+                            while ($row= mysqli_fetch_assoc($result) and $row3= mysqli_fetch_assoc($resp1) ) {
                         ?>
 
                 <!--- \\\\\\\Post-->
