@@ -13,7 +13,7 @@ $idu= $_SESSION["utilisateur"]["id"];
         $email= $_POST['email'];
         $modp=$_POST['modp'];
         if (!empty($username) and !empty($email) and !empty($modp)) {
-          $req2="UPDATE `users` SET `username`='$username',`password`='$modp',`email`='$email',`date_aniv`=current_timestamp(),`created_at`=current_timestamp() WHERE id=$ids";
+          $req2="UPDATE `users` SET `username`='$username',`password`='$modp',`email`='$email',`date_aniv`=current_timestamp(),`created_at`=current_timestamp() WHERE id=$idu";
           $resp1=mysqli_query($conn,$req2);
           if ($resp1) {
            header('location: ../view/profiles_utilisateur.php');

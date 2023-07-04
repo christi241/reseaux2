@@ -12,13 +12,15 @@ if (isset($_POST['submit'])) {
     $dist="./images".$img;
     move_uploaded_file($_FILES['img']['tmp_name'],$dist);
   
-  $bon="INSERT INTO posts ( user_id, media, text, created_at) VALUES ('$idu','$media','$img',current_timestamp())";
+  $bon="INSERT INTO posts (user_id, media, text, created_at) VALUES ($idu,$media,$img,current_timestamp())";
   $requet4 = mysqli_query($conn,$bon);
      if($requet4){
                 header('location: index.php');
               
     }else {
      echo "pots pas introduit";
+     echo $media;
+     echo $img;
      
 
      }
@@ -345,7 +347,7 @@ if (isset($_POST['submit'])) {
     // Vous pouvez utiliser la bibliothèque jQuery ou la méthode native XMLHttpRequest pour cela
     // Par exemple, en utilisant jQuery :
     $.ajax({
-      url: "update_like.php", // L'URL du script PHP qui met à jour les likes
+      url: "index.php", // L'URL du script PHP qui met à jour les likes
       type: "POST", // Utilisez la méthode POST pour envoyer les données au serveur
       data: { 
         post_id: <?php echo $post_id; ?>,
